@@ -1,0 +1,357 @@
+body {
+  background: #F4F1EA;
+}
+
+.hidden {
+  width: 0;
+  height: 0;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  width: 68%;
+  height: fit-content;
+  margin: 10.5% 16% 6vw;
+}
+
+.card h2 {
+  font-size: 2vw;
+  font-family: "Noto Sans KR";
+  font-weight: bold;
+}
+.card .top-3 ul {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card .top-3 li {
+  width: 30%;
+  height: 28vw;
+  margin-top: 30px;
+  background: #FFFCFC;
+  border-radius: 20px;
+}
+.card .top-3 a {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Noto Sans KR";
+  position: relative;
+}
+.card .top-3 a p {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 1.8vw;
+  font-weight: bold;
+}
+.card .top-3 a .photo {
+  width: 100%;
+  height: 66%;
+  margin-top: 2vw;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .top-3 a img {
+  width: 50%;
+  height: auto;
+}
+.card .top-3 a .box {
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.card .top-3 a h4 {
+  width: 90%;
+  line-height: 1.4em;
+  margin: 0.6vw 0;
+  font-size: 1.2vw;
+  text-align: center;
+  word-break: break-all;
+}
+.card .top-3 a .tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .top-3 a .tag span {
+  width: fit-content;
+  margin: 0 3px 0;
+  font-size: 0.9vw;
+  text-align: center;
+  color: #222;
+}
+.card .list {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+.card .list li {
+  width: 100%;
+  height: 10vw;
+  margin-bottom: 20px;
+  background-color: #FFFCFC;
+  border-radius: 20px;
+}
+.card .list a {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Noto Sans KR";
+}
+.card .list a .number {
+  display: block;
+  width: 1.8em;
+  margin-left: 0.6em;
+  text-align: center;
+  font-size: 1.8vw;
+}
+.card .list a .photo {
+  width: 12vw;
+  height: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .list a img {
+  width: auto;
+  height: 80%;
+}
+.card .list a .box {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.card .list a h4 {
+  font-size: 1.6vw;
+  line-height: 2vw;
+}
+.card .list a .text {
+  display: flex;
+  flex-direction: row;
+  font-size: 1vw;
+  color: #4b4b4b;
+  margin: 0.7vw 0 0.6vw;
+}
+.card .list a .tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .list a .tag span {
+  width: fit-content;
+  margin: 0 3px 0;
+  font-size: 1vw;
+  text-align: center;
+  color: #151515;
+}
+
+#credit .lie-A img {
+  width: 46% !important;
+  height: auto !important;
+}
+
+#check .lie-a img {
+  width: 70% !important;
+  height: auto !important;
+}
+#check .lie-b img {
+  width: 46% !important;
+  height: auto !important;
+}
+
+@media (max-width: 1024px) {
+  main {
+    margin-top: 13.5%;
+  }
+}
+@media (max-width: 768px) {
+  main {
+    width: calc(100% - 20vw);
+    margin: 0 10vw 8vw;
+  }
+  .card .inner {
+    margin-top: 14vh;
+  }
+  .card h2 {
+    font-size: 3vw;
+  }
+  .card .top-3 li {
+    width: 31.5%;
+  }
+  .card .top-3 a p {
+    font-size: 1.6vh;
+    top: 20px;
+    left: 20px;
+  }
+  .card .top-3 a .photo {
+    margin-top: 1.2vw;
+  }
+  .card .top-3 a img {
+    width: 40%;
+  }
+  .card .top-3 .box {
+    width: 70%;
+  }
+  .card .top-3 a h4 {
+    font-size: 1.1vh;
+  }
+  .card .top-3 a .tag span {
+    font-size: 0.9vh;
+  }
+  .card .list {
+    margin-top: 20px;
+  }
+  .card .list li {
+    margin-bottom: 10px;
+  }
+  .card .list a .photo {
+    width: 12vw;
+  }
+  .card .list a img {
+    height: 70%;
+  }
+  .card .list .box {
+    width: 70%;
+  }
+  .card .list a .text {
+    margin-top: 0.8vw;
+  }
+  #check .lie-a img {
+    width: 60% !important;
+    height: auto !important;
+  }
+  #check .lie-b img {
+    width: 50% !important;
+    height: auto !important;
+  }
+}
+@media (max-width: 450px) {
+  main {
+    width: calc(100% - 8vw);
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+  main .inner {
+    margin-top: 10vh !important;
+  }
+  main h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  main .card .top-3 ul {
+    justify-content: center;
+    flex-direction: column;
+  }
+  main .card .top-3 li {
+    width: 100%;
+    height: 110px;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Noto Sans KR";
+  }
+  main .card .top-3 a {
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+  main .card .top-3 a p {
+    position: static;
+    display: block;
+    width: 1.8em;
+    margin-left: 0.6em;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  main .card .top-3 a .photo {
+    width: 80px;
+    height: 100%;
+    margin-top: 0;
+  }
+  main .card .top-3 a img {
+    width: auto;
+    height: 70%;
+  }
+  main .card .top-3 .box {
+    width: 60%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  main .card .top-3 a h4 {
+    font-size: 0.9em;
+    line-height: 1.4;
+    text-align: left;
+  }
+  main .card .top-3 a .tag span {
+    font-size: 0.6em;
+    margin-top: 0.8vh;
+  }
+  main .card .list {
+    margin-top: 0;
+  }
+  main .card .list li {
+    height: 100px;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+  main .card .list a .number {
+    font-size: 1.15em;
+  }
+  main .card .list a .photo {
+    width: 80px;
+  }
+  main .card .list a img {
+    width: auto;
+    height: 70%;
+  }
+  main .card .list .box {
+    width: 60%;
+  }
+  main .card .list a h4 {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+  main .card .list a .text {
+    display: none;
+  }
+  main .card .list a .tag span {
+    font-size: 0.6em;
+    margin-top: 0.8vh;
+  }
+  main #check .lie-a img {
+    width: 68% !important;
+    height: auto !important;
+  }
+  main #check .lie-b img {
+    width: 64% !important;
+    height: auto !important;
+  }
+}
