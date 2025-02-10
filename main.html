@@ -15,16 +15,11 @@
 
 <body>
   <div class="inner">
-    <div class="logo">
-      <a href="main.html">
-        <img src="images/logo2_off.png" alt="로고" onmouseover="this.src='images/logo2_on.png'" onmouseout="this.src='images/logo2_off.png'">
-      </a>
-    </div>
     <div class="container">
       <div class="camera_top">
         <li><img src="images/flash.png" alt="카메라 플래시"></li>
         <li><img src="images/shake.png" alt="카메라 흔들림"></li>
-        <li><img src="images/live.png" alt="카메라 라이브"></li>        
+        <li><img src="images/live_off.png" alt="카메라 라이브"></li>        
       </div>
       <div id="lens"><img src="images/top_camera.png" alt="렌즈"></div>
       <div class="camera_bottom">
@@ -54,29 +49,31 @@
           <img src="images/camera_zoom.png" alt="카메라 줌">
         </div>
         <div class="camera_bolt">
-          <img src="images/bolt.png" alt="카메라 조명">
+          <img src="images/bolt_off.png" alt="카메라 조명" onmouseover="this.src='images/bolt_on.png'" onmouseout="this.src='images/bolt_off.png'">
         </div>
-        
         <a href=".all_menu" class="menu_btn">
           <span id="line"></span>
           <span id="line"></span>
         </a>
-        <div class="camera_reverse">
-          <img src="images/reverse.png" alt="카메라 반전">
+        <div class="camera_live">
+          <img src="images/live_off.png" alt="카메라 라이브" onmouseover="this.src='images/live_on.png'" onmouseout="this.src='images/live_off.png'">
         </div>
-        
+        <div class="live">
+          LIVE
+        </div>
         <div class="all_menu">
           <div id="left_area"></div>
           <div id="right_area"></div>        
         </div>
+        
         <div class="menu_text"> 
           <ul id="depth_1">
             <li>
               <a href="#">카드 분류별 랭킹</a>
               <div>
                 <ul id="depth_2">
-                  <li><a href="https://mio-mia.github.io/project02-share/html/credit.html" target="_blank">신용카드 Top 10</a></li>
-                  <li><a href="https://mio-mia.github.io/project02-share/html/check.html" target="_blank">체크카드 Top 10</a></li>
+                  <li><a id="credit_link" href=".credit_top10">신용카드 Top 10</a></li>
+                  <li><a id="check_link" href=".check_top10">체크카드 Top 10</a></li>
                   <li><a href="#">카드타입별 보기</a></li>
                   <li><a href="#">전월실적별 보기</a></li>
                 </ul>
@@ -134,17 +131,424 @@
         <div class="custom_card">
           <div id="custom_title">나에게<br><span>딱</span> 맞는 <span>카드</span>는?!</div>
           <div id="custom_text">맞춤카드추천 <img id="custom_img" src="images/custom_card.png" alt="맞춤카드 이미지"></div>
-          <div id="custom_link"><a href="https://mio-mia.github.io/project02-share/html/re.html" target="_blank">바로가기</a></div>
+          <div><a id="custom_link" href=".custom_menu">바로가기</a></div>
         </div>      
         <div class="bezel">
-          <img src="images/screen.png" alt="스크린">
+          <img id="screen" src="images/screen.png" alt="스크린">
         </div>
-        
+
+        <div class="custom_menu">
+          <form>
+            <div class="custom_header">
+              <h4>카드검색</h4>
+            </div><!--end:.custom_header-->
+            <div class="custom_container">
+              <div class="filter">
+                <div class="type">
+                  <div class="type_title">
+                    카드 종류
+                  </div>
+                  <div class="type_selector">
+                    <input id="credit" type="radio" name="type_selector">
+                    <label for="credit">          
+                      <span class="type_name">신용카드</span>
+                    </label>
+                    <input id="check" type="radio" name="type_selector">
+                    <label for="check">
+                      <span class="type_name">체크카드</span>
+                    </label>
+                  </div>
+                </div><!--end:.type-->
+                <div class="benefit">
+                  <div class="benefit_title">
+                    카드 혜택 (최대 4개)
+                  </div>
+                  <div class="benefit_selector">
+                    <ul>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit01" type="checkbox" name="benefit_selector">
+                        <label for="benefit01">          
+                          <span class="benefit_name"><em>📞 통신</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit02" type="checkbox" name="benefit_selector">
+                        <label for="benefit02">          
+                          <span class="benefit_name"><em>🛍️ 쇼핑</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit03" type="checkbox" name="benefit_selector">
+                        <label for="benefit03">          
+                          <span class="benefit_name"><em>🛒 마트·편의점</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit04" type="checkbox" name="benefit_selector">
+                        <label for="benefit04">          
+                          <span class="benefit_name"><em>🚌 교통</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit05" type="checkbox" name="benefit_selector">
+                        <label for="benefit05">          
+                          <span class="benefit_name"><em>🏍️ 배달앱·간편결제</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit06" type="checkbox" name="benefit_selector">
+                        <label for="benefit06">          
+                          <span class="benefit_name"><em>📺 구독·스트리밍</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit07" type="checkbox" name="benefit_selector">
+                        <label for="benefit07">          
+                          <span class="benefit_name"><em>🧳 여행·해외결제</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit08" type="checkbox" name="benefit_selector">
+                        <label for="benefit08">          
+                          <span class="benefit_name"><em>✈️ 항공 마일리지·라운지</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit09" type="checkbox" name="benefit_selector">
+                        <label for="benefit09">          
+                          <span class="benefit_name"><em>⛽️ 주유·차량정비</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit10" type="checkbox" name="benefit_selector">
+                        <label for="benefit10">          
+                          <span class="benefit_name"><em>🏪 무실적·모든 가맹점</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit11" type="checkbox" name="benefit_selector">
+                        <label for="benefit11">          
+                          <span class="benefit_name"><em>🧾 공과금</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit12" type="checkbox" name="benefit_selector">
+                        <label for="benefit12">          
+                          <span class="benefit_name"><em>🏥 병원·약국</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit13" type="checkbox" name="benefit_selector">
+                        <label for="benefit13">          
+                          <span class="benefit_name"><em>💸 증권사</em></span>
+                        </label>
+                      </li>
+                      <li>
+                        <input onclick="CountChecked(this)" id="benefit14" type="checkbox" name="benefit_selector">
+                        <label for="benefit14">          
+                          <span class="benefit_name"><em>💳 제휴</em></span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div><!--end:.benefit-->
+              </div><!--end:.filter-->
+              <div class="result">
+                <div class="result_button">
+                  <img src="images/chip_s.png" alt="카드 칩" id="chip">
+                  <span id="result_number">13</span><span id="result_text">개의<br>카드를 찾았습니다.</span><br>
+                  <a href="#"><span id="result_link">검색된 카드 보기</span></a>
+                </div><!--end:.result_button-->
+              </div><!--end:.result-->
+            </div><!--end:.custom_container-->
+            <div class="reset">
+              <button type="reset" id="reset_button" onclick="countReset()"></button>
+              <label for="reset_button">
+                <img src="images/reset.png" alt="초기화 아이콘">
+                <span>선택 초기화 하기</span>
+              </label>
+            </div><!--end:.reset-->
+          </form>
+          <div>
+            <a  class="custom_close" href=""><img src="images/close_btn_b.png" alt="커스텀 닫기"></a>
+          </div>
+        </div><!--end:.custom_menu-->
+
+        <div class="credit_top10">
+          <div class="credit_header">
+            <h4>신용카드 TOP 10</h4>
+          </div><!--end:.credit_header-->
+          <div class="credit_container">
+            <div class="credit_top3">
+              <ul>
+                <li><a href="#">
+                  <p>1</p>
+                  <div class="photo"><img src="img/credit/credit-01.png" alt="" title="더보기"></div>
+                  <div class="box">
+                    <h4>삼성카드 taptap O</h4>
+                    <div class="tag">
+                      <span>#삼성카드</span>
+                      <span>#사회초년생</span>
+                    </div>
+                  </div>
+                </a></li>
+                <li><a href="#">
+                  <p>2</p>
+                  <div class="photo"><img src="img/credit/credit-02.png" alt=""></div>
+                  <div class="box">
+                    <h4>신한카드 Mr.Life</h4>
+                    <div class="tag">
+                      <span>#공과금</span>
+                      <span>#마트·편의점</span>
+                    </div>
+                  </div>
+                </a></li>
+                <li><a href="#">
+                  <p>3</p>
+                  <div class="photo"><img src="img/credit/credit-03.png" alt=""></div>
+                  <div class="box">
+                    <h4>삼성카드 & MILEAGE PLATINUM (스카이패스)</h4>
+                    <div class="tag">
+                      <span>#마일리지 적립</span>
+                      <span>#라운지</span>
+                    </div>
+                  </div>
+                </a></li>
+              </ul>
+              <div>
+                <a  class="credit_close" href=""><img src="images/close_btn_b.png" alt="카드10 닫기"></a>
+              </div>
+            </div><!--end:.credit_top3-->
+            <div class="credit_list">
+              <ul>
+                <li><a href="#">
+                  <div class="photo"><img src="img/credit/credit-04.png" alt=""></div>
+                  <div class="box">
+                    <h4>현대카드 M</h4>
+                    <p class="text">국내 외 가맹점 1.5%적립, 온라인 쇼핑몰 5% 적립, 해외 가맹점 5% 적립</p>
+                    <div class="tag">
+                      <span>#현대카드</span>
+                      <span>#적립</span>
+                      <span>#캐시백</span>
+                    </div><!-- tag -->
+                </div> <!-- box -->
+                </a></li>
+                <li><a href="#">
+                  <div class="photo"><img src="img/credit/credit-05.png" alt=""></div>
+                  <div class="box">
+                    <h4>KB국민 My WE:SH 카드</h4>
+                    <p class="text">공과금 10% 할인, 교통·통신·배달앱 10% 할인, 스트리밍 1,500원 할인</p>
+                    <div class="tag">
+                      <span>#KB국민카드</span>
+                      <span>#KB pay 할인</span>
+                      <span>#음식점</span>  
+                    </div> <!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li class="lie-A"><a href="#">
+                  <div class="photo"><img src="img/credit/credit-06.png" alt=""></div>
+                  <div class="box">
+                    <h4>LOCA 365 카드</h4>
+                    <p class="text">KB Pay 10% 할인, 음식점 10% 할인, 서비스팩 3개 중 1개 선택 할인</p>
+                    <div class="tag">
+                      <span>#롯데카드</span>
+                      <span>#공과금</span>
+                      <span>#통신</span>
+                      <span>#배달앱</span>
+                    </div> <!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li><a href="#">
+                  <div class="photo"><img src="img/credit/credit-07.png" alt=""></div>
+                  <div class="box">
+                    <h4>카드의정석 EVERY MILE SKYPASS</h4>
+                    <p class="text">해외 이용 수수료 0.3% 면제, 국내 공항라운지 동반 1인 동시 이용</p>
+                    <div class="tag">
+                      <span>#우리카드</span>
+                      <span>#마일리지</span>
+                      <span>#라운지</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li><a href="#">
+                  <div class="photo"><img src="img/credit/credit-08.png" alt=""></div>
+                  <div class="box">
+                    <h4>LOCA LIKIT 1.2</h4>
+                    <p class="text">음식·생활·패션 5% 적립, 통신·구독·멤버십 최대 20% 적립</p>
+                    <div class="tag">
+                      <span>#모든가맹점</span>
+                      <span>#온라인</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li><a href="#">
+                  <div class="photo"><img src="img/credit/credit-09.png" alt=""></div>
+                  <div class="box">
+                    <h4>신한카드 처음(ANNIVERSE)</h4>
+                    <p class="text">모든 가맹점 1.2% 할인, 온라인 1.5% 할인</p>
+                    <div class="tag">
+                      <span>#신한카드</span>
+                      <span>#적립</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li><a href="#">
+                  <div class="photo"><img src="img/credit/credit-10.png" alt=""></div>
+                  <div class="box">
+                    <h4>삼성 iD SIMPLE 카드</h4>
+                    <p class="text">4개 정유사 10% 할인, 차량 서비스 10% 할인, 편의점·커피·택시 5% 할인</p>
+                    <div class="tag">
+                      <span>#삼성카드</span>
+                      <span>#할인</span>
+                      <span>#영화</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+              </ul>
+            </div>
+          </div><!--end:.credit_container-->
+        </div><!--end:.credit_top10-->
+
+        <div class="check_top10">
+          <div class="check_header">
+            <h4>체크카드 TOP 10</h4>
+          </div><!--end:.check_header-->
+          <div class="check_container">
+            <div class="check_top3">
+              <ul>
+                <li><a href="#">
+                  <p>1</p>
+                  <div class="photo"><img src="img/check/check-01.png" alt="" title="더보기"></div>
+                  <div class="box">
+                    <h4>삼성카드 taptap O</h4>
+                    <div class="tag">
+                      <span>#삼성카드</span>
+                      <span>#사회초년생</span>
+                    </div>
+                  </div>
+                </a></li>
+                <li><a href="#">
+                  <p>2</p>
+                  <div class="photo"><img src="img/check/check-02.png" alt=""></div>
+                  <div class="box">
+                    <h4>신한카드 Mr.Life</h4>
+                    <div class="tag">
+                      <span>#공과금</span>
+                      <span>#마트·편의점</span>
+                    </div>
+                  </div>
+                </a></li>
+                <li><a href="#">
+                  <p>3</p>
+                  <div class="photo"><img src="img/check/check-03.png" alt=""></div>
+                  <div class="box">
+                    <h4>삼성카드 & MILEAGE PLATINUM (스카이패스)</h4>
+                    <div class="tag">
+                      <span>#마일리지 적립</span>
+                      <span>#라운지</span>
+                    </div>
+                  </div>
+                </a></li>
+              </ul>
+              <div>
+                <a  class="check_close" href=""><img src="images/close_btn_b.png" alt="카드10 닫기"></a>
+              </div>
+            </div><!--end:.check_top3-->
+            <div class="check_list">
+              <ul>
+                <li><a href="#">
+                  <div class="photo"><img src="img/check/check-04.png" alt=""></div>
+                  <div class="box">
+                    <h4>네이버페이 머니 하나 체크카드</h4>
+                    <p class="text">네이버페이 1.2% 포인트 적립</p>
+                    <div class="tag">
+                      <span>#하나카드</span>
+                      <span>#네이버페이</span>
+                      <span>#적립</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li><a href="#">
+                  <div class="photo"><img src="img/check/check-05.png" alt=""></div>
+                  <div class="box">
+                    <h4>카카오페이 신한 체크카드</h4>
+                    <p class="text">카카오페이 2% 적립, 대중교통 3% 적립, CGV 최대 3천원 적립</p>
+                    <div class="tag">
+                      <span>#신한카드</span>
+                      <span>#카카오페이</span>
+                      <span>#적립</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li><a href="#">
+                  <div class="photo"><img src="img/check/check-06.png" alt=""></div>
+                  <div class="box">
+                    <h4>모빌리언스카드</h4>
+                    <p class="text">온라인·오프라인 각각 1% 0.5% 적립, 편의점·커피·외식 최대 7.5% 적립</p>
+                    <div class="tag">
+                      <span>#KG모빌리언스</span>
+                      <span>#적립</span>
+                      <span>#카페</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li><a href="#">
+                  <div class="photo"><img src="img/check/check-07.png" alt=""></div>
+                  <div class="box">
+                    <h4>PAYCO 포인트 카드</h4>
+                    <p class="text">HDC 아이파크몰 100만P 상품권 지급, 매월 건당 최대 30% 무제한 할인</p>
+                    <div class="tag">
+                      <span>#엔에이치엔페이코</span>
+                      <span>#적립</span>
+                      <span>#할인</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li><a href="#">
+                  <div class="photo"><img src="img/check/check-08.png" alt=""></div>
+                  <div class="box">
+                    <h4>더나은 체크카드</h4>
+                    <p class="text">간편결제 20% 할인, 온라인쇼핑 20% 할인, 커피전문점 20% 할인</p>
+                    <div class="tag">
+                      <span>#MG새마을금고</span>
+                      <span>#쇼핑</span>
+                      <span>#할인</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li class="lie-b"><a href="#">
+                  <div class="photo"><img src="img/check/check-09.png" alt=""></div>
+                  <div class="box">
+                    <h4>노리체크카드</h4>
+                    <p class="text">대중교통 10% 청구할인, 이동통신 요금 2,500원 환급할인, CGV 35% 환급할인</p>
+                    <div class="tag">
+                      <span>#KB국민카드</span>
+                      <span>#대중교통</span>
+                      <span>#영화</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+                <li><a href="#">
+                  <div class="photo"><img src="img/check/check-10.png" alt=""></div>
+                  <div class="box">
+                    <h4>트래블러스 체크카드</h4>
+                    <p class="text">해외 이용 수수료면제, 철도 5,000원 할인, 전국 맛집 5,000원 할인</p>
+                    <div class="tag">
+                      <span>#KB국민카드</span>
+                      <span>#해외 수수료 면제</span>
+                      <span>#국내 할인</span>
+                    </div><!-- tag -->
+                  </div> <!-- box -->
+                </a></li>
+              </ul>
+            </div>
+          </div><!--end.credit_container-->
+        </div><!--end:.check_top10-->
+
         <div class="pc open_btn"><span id="pc_click">CLICK</span></div>        
         <div class="swiper pc_swiper">
           <div class="swiper_close open_btn">
-            <span id="line"></span>
-            <span id="line"></span>
+            <img src="images/close_btn_b.png" alt="스와이퍼 닫기 버튼">
           </div>
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="cards/ott1.png" alt="">
@@ -202,8 +606,7 @@
         <div class="bag open_btn"><span id="bag_click">CLICK</span></div>
         <div class="swiper bag_swiper">
           <div class="swiper_close open_btn">
-            <span id="line"></span>
-            <span id="line"></span>
+            <img src="images/close_btn_b.png" alt="스와이퍼 닫기 버튼">
           </div>
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="cards/shopping1.png" alt="">
@@ -261,8 +664,7 @@
         <div class="trip open_btn"><span id="trip_click">CLICK</span></div>
         <div class="swiper trip_swiper">
           <div class="swiper_close open_btn">
-            <span id="line"></span>
-            <span id="line"></span>
+            <img src="images/close_btn_b.png" alt="스와이퍼 닫기 버튼">
           </div>
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="cards/trip1.png" alt="">
@@ -276,7 +678,7 @@
             <div class="swiper-slide"><img src="cards/trip2.png" alt="">
               <ul>
                 <li id="sub_title">카드의 정석<br>EVERY MILE SKYPASS</li>
-                <li id="sub_text1">국내 공항라운지 동반 1인<br>동시 이용</li>
+                <li id="sub_text1">라운지 동반 1인 동시 이용</li>
                 <li id="sub_text2">#국내전용 39,000원<br>#해외겸용 39,000원<br>#전월실적 없음</li>
                 <li id="sub_link"><a href="#">바로가기</a></li>
               </ul>
@@ -320,8 +722,7 @@
         <div class="movie open_btn"><span id="movie_click">CLICK</span></div>
         <div class="swiper movie_swiper">
           <div class="swiper_close open_btn">
-            <span id="line"></span>
-            <span id="line"></span>
+            <img src="images/close_btn_b.png" alt="스와이퍼 닫기 버튼">
           </div>
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="cards/movie1.png" alt="">
@@ -371,8 +772,7 @@
         <div class="delievery open_btn"><span id="delievery_click">CLICK</span></div>
         <div class="swiper delievery_swiper">
           <div class="swiper_close open_btn">
-            <span id="line"></span>
-            <span id="line"></span>
+            <img src="images/close_btn_b.png" alt="스와이퍼 닫기 버튼">
           </div>
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="cards/delievery1.png" alt="">
@@ -422,8 +822,7 @@
         <div class="car open_btn"><span id="car_click">CLICK</span></div>
         <div class="swiper car_swiper">
           <div class="swiper_close open_btn">
-            <span id="line"></span>
-            <span id="line"></span>
+            <img src="images/close_btn_b.png" alt="스와이퍼 닫기 버튼">
           </div>
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="cards/car1.png" alt="">
