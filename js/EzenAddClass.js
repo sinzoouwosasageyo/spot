@@ -51,7 +51,7 @@ function EzenAddClass(tag="", options={}){
 		});
 
 
-		if(!obj.remove=="none"){
+		if(obj.remove!=="none"){
 			remo = document.querySelector(obj.remove);
 			remo.addEventListener(obj.motion , function(e){
 				e.preventDefault();
