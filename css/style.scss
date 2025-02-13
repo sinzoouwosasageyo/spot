@@ -9,65 +9,19 @@ $font_Godo_B: "Godo_B";
   width: 100%; height: 100vh; user-select: none;
   background: url(../images/background1_1.jpg) no-repeat; background-size: cover;
   display: flex; justify-content: center; align-items: center;
-
   .container {
     max-width: 1559px; max-height: 876px; z-index: 10; position: relative;
     padding: .3%; background: #000;
     border: 2px solid #67b22b; border-radius: 30px;
-
-    .camera_top {
-      position: absolute; top: 0%; left: 0%; border-radius: 20px 0 0 20px;
-      width: 12%; height: 100%; background: #000; display: none;
-      li {
-        &:first-child {position: absolute; top: 90%; left: 11%;}
-        &:nth-child(2) {position: absolute; top: 81.6%; left: 11%;}
-        &:last-child {position: absolute; top: 4.8%; left: 11%;}
-        img {width: 28%;}
-      }
-    }
-
-    #lens {
-      position: absolute; top: 46%; left: 2.6%; display: none;
-      img {width: 50%;}
-    }
-
-    .camera_bottom {
-      position: absolute; top: 0%; right: 0%; border-radius: 0 20px 20px 0; display: none;
-      width: 12%; height: 100%; background: #000;
-      #bottom_top {
-        display: flex; color: #fff; flex-direction: column;
-        li {
-          transform: rotate(-90deg);
-          font-size: .8rem;
-          &:first-child {position: absolute; top: 86%; left: -18%;}
-          &:nth-child(2) {position: absolute; top: 61%; left: -18%;}
-          &:nth-child(3) {position: absolute; top: 35%; left: -25%;}
-          &:last-child {position: absolute; top: 10%; left: -10.8%;}
-          &:hover {color: #ffd50a;}          
-        }
-      }
-      #preview {
-        position: absolute; top: 87.4%; left: 44%;
-        img {width: 62%; transform: rotate(-90deg); border-radius: 5px;}
-      }
-      #bottom_camera {
-        position: absolute; top: 41.4%; left: 35%;
-        img {width: 86%;}
-      }
-      #bottom_reverse {
-        position: absolute; top: 5%; left: 44%;
-        img {width: 60%; transform: rotate(-90deg);}
-      }
-    }
-
     .wrap {
-      display: flex; justify-content: center; align-items: center;
+      display: flex; justify-content: center; align-items: center; height: 100%;
       .logo2 {
         z-index: 30;
         width: 8%; height: 4%; position: absolute; top: -5.6%; left: 46%;
         img {width: 100%;}
       }
       .bezel {
+        height: 100%;
         #screen {width: 100%; height: 100%; border-radius: 26px;}
       }      
       .camera_zoom {
@@ -89,7 +43,7 @@ $font_Godo_B: "Godo_B";
         }
       }
       .camera_live {
-        position: absolute; bottom: 36.4%; left: 94.2%; cursor: pointer;
+        position: absolute; bottom: 36.4%; left: 94.4%; cursor: pointer;
         transition: all .2s ease-in-out;
         img {width: 45%;}
       }
@@ -111,16 +65,6 @@ $font_Godo_B: "Godo_B";
         position: absolute; bottom: 48%; right: 2.4%; z-index: 40;
         width: 58px; height: 58px; background: #fff; border-radius: 50%;
         border: 3px solid #000; transition: all .2s ease-in-out; outline: 7px solid #fff;
-
-        animation-name: ring_blink;
-          animation-duration: 3s;
-          animation-iteration-count: infinite;
-          @keyframes ring_blink {
-            0% {outline-color: #fff;}
-            50% {outline-color: #111;}
-            100% {outline-color: #fff;}
-          }
-
         #line {
           width: 50%; height: 2px; background: #e5e5e5;
           position: absolute; top: 47%; left: 24.6%; transition: all .1s ease-in-out;
@@ -131,11 +75,19 @@ $font_Godo_B: "Godo_B";
             transform: rotate(45deg); opacity: 0; visibility: hidden;
           }
         }
+        animation-name: ring_blink;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+          @keyframes ring_blink {
+            0% {outline-color: #fff;}
+            50% {outline-color: #111;}
+            100% {outline-color: #fff;}
+          }
         &:hover {  
           transform: scale(1.1);
         }
         &.showActive {
-          #line {background: #111;}
+          #line {background: #111; top: 46%; left: 25%;}
           #line:first-child {opacity: 1; visibility: visible;}
           #line:last-child {opacity: 1; visibility: visible;}
         }
@@ -692,7 +644,7 @@ $font_Godo_B: "Godo_B";
             100% {left: 58%; transform: scale(1.6);}
           }
         }
-      }
+      }      
       
       .swiper {
         width: 60%; height: 65%; border-radius: 15px; position: absolute; top: 17%; left: 20%;
@@ -737,29 +689,145 @@ $font_Godo_B: "Godo_B";
   }
 }
 
+.rotate_screen {
+  position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 100;
+  background: #000000ee; display: none;
+  .rotate_icon {
+    width: 30%; margin: 90% auto 0;
+    img {width: 100%;}
+  }
+}
+.rotate_text {
+  position: fixed; top: 38%; left: 22.4%; z-index: 100;
+  display: none; color: #fff; font-size: 1.2rem; font-weight: bold;
+}
+
 @media (max-width: 1024px){
-  .inner {transform: rotate(90deg);}
-  .inner .container {max-height: 1024px;}
-  .inner .container .wrap .all_menu {top: .8%; right: .42%;}
-  .inner .container .wrap .all_menu.active {width: 99.3%;}
-  .inner .container .wrap .all_menu #left_area {border-radius: 22px 0 0 22px;}
-  .inner .container .wrap .all_menu #right_area {border-radius: 0 22px 22px 0;}
-  .inner .container .wrap .custom_card {left: 4%;}
-  .inner .container .wrap .tutorial {left: 39.4%; padding: .8em;}
-  .inner .container .wrap .tutorial #tuto_text1 {display: none;}
-  .inner .container .wrap .tutorial #tuto_text2 {display: block; padding-top: .5em;}
-  .inner .container .wrap .tutorial #tuto_close {padding: 5.6em 0 0 12.4em;}
-  .inner .container .wrap .tutorial #dot_box {top: 44%; left: 44%;}
-  .inner .container .wrap .tutorial #mouse {display: none;}
-  .inner .container .wrap .tutorial #touch {display: block;}
-  .inner .container .wrap .swiper {top: 25%; left: 31%;}
-  .inner .container .wrap .swiper .swiper-slide #sub_title {font-size: 1rem;}
-  .inner .container .wrap .swiper .swiper-slide #sub_text1 {font-size: .8rem;}
-  .inner .container .wrap .swiper .swiper-slide #sub_link a {font-size: .8rem; padding: .38em 1.4em .5em;}
-  .inner .container .wrap .swiper .swiper-slide img {padding-left: 1em; margin-right: .2em;}
-  .inner .container .wrap .custom_card #custom_title {font-size: 1.88rem;}
-  .inner .container .wrap .custom_card #custom_text {font-size: 1.56rem;}
-  .inner .container .wrap .custom_card #custom_link a {font-size: 1.2rem; padding: .34em 1.4em .42em;}
+  .inner .container .wrap .all_menu {
+    top: .8%; right: .42%;
+    &.all_menu.active {width: 99.3%;}
+    #left_area {border-radius: 22px 0 0 22px;}
+    #right_area {border-radius: 0 22px 22px 0;}
+  }
+
+  .inner .container .wrap .menu_text #depth_1 {
+    padding: 1em;
+    & > li {padding: 1em 0 0 0;}
+    & > li:first-child {padding-top: .5em;}
+    a {width: 26%;}
+  }
+  
+  .inner .container .wrap .tutorial {
+    left: 39.4%; padding: .8em;
+    #tuto_text1 {display: none;}
+    #tuto_text2 {display: block; padding-top: .5em;}
+    #tuto_close {padding: 5.6em 0 0 12.4em;}
+    #dot_box {top: 44%; left: 44%;}
+    #mouse {display: none;}
+    #touch {display: block;}
+  }
+  
+  .inner .container .wrap .swiper {
+    top: 16%; left: 18.4%;
+    .swiper-slide {
+      #sub_title {font-size: 1.5rem;}
+      #sub_text1 {font-size: 1.2rem;}
+      #sub_text2 {font-size: 1.1rem;}
+      #sub_link a {font-size: 1.2rem; padding: .38em 1.4em .5em;}
+      img {width: 38%; padding-left: 2.5em;}
+    }
+  }
+  
+  .inner .container .wrap .custom_card {
+    left: 4%; height: 80%; top: 10%;
+    #custom_title {font-size: 1.88rem;}
+    #custom_text {font-size: 1.56rem;}
+    #custom_link a {font-size: 1.2rem; padding: .34em 1.4em .42em;}
+  }
+
+  .inner .container .wrap .custom_menu {
+    top: .8%; padding: .4em 1em; border-radius: 23px;
+    .custom_header {padding: 1em;}
+    .custom_container {
+      .filter {
+        width: 62.8%; padding: 1em;
+        .benefit {
+          margin-top: 1.2em;
+          .benefit_selector {
+            label {
+              .benefit_name {width: 15.56vw;}
+            }
+          }
+        }
+      }
+      .result {
+        width: 26%; height: 44.6vh; margin-top: 3.4em;
+      }
+    }
+    .reset {
+      padding: 0 1em;
+      label {width: 20%; padding: .75em;}
+    }
+  }
+
+  .inner .container .wrap .credit_top10 {
+    top: .8%; padding: .4em 1em; border-radius: 23px;
+    .credit_container {
+      .credit_top3 {
+        ul {
+          li {
+            .box {
+              h4 {font-size: .8rem;}
+            }
+            .tag {font-size: .8rem;}
+          }
+        }
+      }
+      .credit_list {
+        ul {
+          li {
+            margin-bottom: 0;
+            .photo {width: 8.2%; margin-top: -.5%;}
+            .box {
+              padding: .4%;
+              p {font-size: .8rem; margin: .7em 0 .3em;}
+              .tag {font-size: .8rem;}
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .inner .container .wrap .check_top10 {
+    top: .8%; padding: .4em 1em; border-radius: 23px;
+    .check_container {
+      .check_top3 {
+        ul {
+          li {
+            .box {
+              h4 {font-size: .8rem;}
+            }
+            .tag {font-size: .8rem;}
+          }
+        }
+      }
+      .check_list {
+        ul {
+          li {
+            margin-bottom: 0;
+            .photo {width: 8.2%; margin-top: -.5%;}
+            .box {
+              padding: .4%;
+              p {font-size: .8rem; margin: .7em 0 .3em;}
+              .tag {font-size: .8rem;}
+            }
+          }
+        }
+      }
+    }
+  }
+
   .inner .container .wrap .pc {top: 28.4%; right: 17.4%;}
   .inner .container .wrap .pc:hover {right: 15%;}
   .inner .container .wrap .bag {bottom: 18%; left: 30%;}
@@ -773,45 +841,300 @@ $font_Godo_B: "Godo_B";
   .inner .container .wrap .car {top: 5.2%; left: 25.2%;}
   .inner .container .wrap .car:hover {left: 23.2%;}
   .inner .container .wrap .menu_btn {width: 50px; height: 50px;}
-  .inner .container .wrap .menu_btn #line {top: 47%; left: 25.4%;}
   .inner .container .wrap .camera_zoom {top: 28%;}
   .inner .container .wrap .camera_zoom img {width: 40%;}
 }
 
-@media (max-width: 768px){
-  .inner .container {transform: rotate(90deg); background: #000000aa;}
-  .inner .container .wrap {transform: rotate(-90deg);}
-  .inner .container .wrap .logo2 {display: none;}
-  .inner .container .wrap .tutorial {
-    width: 34%; height: 40%; left: 33%; padding: .2em .4em;
-  }
-  .inner .container .wrap .tutorial #tuto_title {font-size: .7rem;}
-  .inner .container .wrap .tutorial #tuto_text2 {font-size: .5rem; padding-top: .3em;}
-  .inner .container .wrap .tutorial #tuto_close {font-size: .6rem; padding: 7.8em 0 0 15.4em;}
-  .inner .container .wrap .tutorial #dot_box {top: 35%; left: 40%; width: 38px; height: 38px;}
-  .inner .container .wrap .tutorial #dot_box::before {width: 6px; height: 6px; top: 52%; left: 52%;}
-  .inner .container .wrap .tutoria #touch {
-    @keyframes finger_move {
-      0% {top: 43%; left: 54%; transform: scale(1.2);}
-      40% {top: 43%; left: 43.4%; transform: scale(1); opacity: 1;}
-      50% {top: 43%; left: 43.4%; transform: scale(1); opacity: .1;}
-      60% {top: 43%; left: 43.4%; transform: scale(1); opacity: 1;}
-      100% {top: 43%; left: 54%; transform: scale(1.2);}
+@media (max-width: 768px) {
+  .inner {
+    .container {
+      height: 100%;
+      .wrap {
+        .logo2 {top: 1%;}
+        .camera_zoom {
+          img {width: 30%;}
+        }
+        .live {
+          font-size: .7rem; font-weight: 500; padding: 4px; top: 7%; left: 46.9%;
+        }
+        .menu_btn {
+          width: 30px; height: 30px; border: 2px solid #000; outline: 4px solid #fff;
+        }
+        .tutorial {
+          width: 40%; height: 46%; top: 25%; left: 30%; padding: .5em;
+          #tuto_title {font-size: 1.2rem;}
+          #tuto_text2 {font-size: 1rem;}
+          #tuto_close {font-size: 1rem; padding: 34% 0 0 85%;}
+          #dot_box {
+            width: 34px; height: 34px; top: 43%;
+            &::before {width: 6px; height: 6px; top: 53%; left: 53%;}
+          }
+          #touch {
+            top: 49%;
+            @keyframes finger_move {
+              0% {left: 53%; transform: scale(1.2);}
+              40% {left: 45.6%; transform: scale(1); opacity: 1;}
+              50% {left: 45.6%; transform: scale(1); opacity: .1;}
+              60% {left: 45.6%; transform: scale(1); opacity: 1;}
+              100% {left: 53%; transform: scale(1.2);}
+            }
+          }
+        }
+        .pc {
+          width: 34px; height: 34px;
+          &:hover {
+            width: 34px; right: 17.4%;
+            &::before {display: block;}
+            &::after {opacity: 1; visibility: visible;}
+            #pc_click {display: none;}
+          }
+          &::before {width: 6px; height: 6px; top: 53%; left: 53%;}
+          &::after {display: none;}
+        }
+        .bag {
+          width: 34px; height: 34px; bottom: 16%; left: 25%;
+          &:hover {
+            width: 34px; left: 25%;
+            &::before {display: block;}
+            &::after {opacity: 1; visibility: visible;}
+            #bag_click {display: none;}
+          }
+          &::before {width: 6px; height: 6px; top: 53%; left: 53%;}
+          &::after {display: none;}
+        }
+        .trip {
+          width: 34px; height: 34px; top: 11%; left: 50%;
+          &:hover {
+            width: 34px; left: 50%;
+            &::before {display: block;}
+            &::after {opacity: 1; visibility: visible;}
+            #trip_click {display: none;}
+          }
+          &::before {width: 6px; height: 6px; top: 53%; left: 53%;}
+          &::after {display: none;}
+        }
+        .movie {
+          width: 34px; height: 34px; top: 9%; left: 71.6%;
+          &:hover {
+            width: 34px; left: 71.6%;
+            &::before {display: block;}
+            &::after {opacity: 1; visibility: visible;}
+            #movie_click {display: none;}
+          }
+          &::before {width: 6px; height: 6px; top: 53%; left: 53%;}
+          &::after {display: none;}
+        }
+        .delievery {
+          width: 34px; height: 34px; bottom: 4%; right: 46%;
+          &:hover {
+            width: 34px; right: 46%;
+            &::before {display: block;}
+            &::after {opacity: 1; visibility: visible;}
+            #delievery_click {display: none;}
+          }
+          &::before {width: 6px; height: 6px; top: 53%; left: 53%;}
+          &::after {display: none;}
+        }
+        .car {
+          width: 34px; height: 34px; top: 4.6%; left: 25%;
+          &:hover {
+            width: 34px; left: 25%;
+            &::before {display: block;}
+            &::after {opacity: 1; visibility: visible;}
+            #car_click {display: none;}
+          }
+          &::before {width: 6px; height: 6px; top: 53%; left: 53%;}
+          &::after {display: none;}
+        }
+        .swiper {
+          width: 70%; height: 75%; top: 13%; left: 14%;
+          .swiper-slide {
+            padding: 1% 5%;
+            img {width: 40%;}
+            #sub_title {font-size: 1.2rem;}
+            #sub_text1 {font-size: 1rem;}
+            #sub_text2 {font-size: .8rem; font-weight: 500;}
+            #sub_link {
+              a {font-size: 1rem;}
+            }
+          }
+        }
+        .custom_card {
+          #custom_title {font-size: 1.4rem;}
+          #custom_text {font-size: 1.18rem;}
+          #custom_link {
+            font-size: 1rem; padding: .14em 1.2em .3em; border-radius: 5px;
+            margin-top: 2em;
+          }
+          #custom_img {width: 10%;}
+        }
+        .menu_text {
+          #depth_1 {
+            padding: 0 1em;
+            & > li {font-size: .8rem; padding: .6em 0;}
+            a {width: 30%;}
+            #depth_2 {
+              font-size: .7rem;
+              & > li {margin-right: .8em;}
+              a {padding-bottom: .6em;}
+            }
+          }
+        }
+        .custom_menu {
+          padding: 0;
+          .custom_header {
+            padding: 1em 0 0 1em;
+            h4 {font-size: 1.2rem;}
+          }
+          .custom_container {
+            .filter {
+              padding: .6em 0 .6em 1em; width: 76%;
+              .type {
+                .type_title {font-size: .9rem;}
+                .type_selector {
+                  label {
+                    padding: .1125em 2.4475em .3625em;
+                    .type_name {font-size: .8rem;}
+                  }
+                }
+              }
+              .benefit {
+                margin-top: .6em;
+                .benefit_title {font-size: .9rem;}
+                .benefit_selector {
+                  label {
+                    padding: .1125em .1875em .3625em;
+                    .benefit_name {
+                      font-size: .8rem; width: 16vw;
+                      #s_icon {display: none;}
+                    }
+                  }
+                }
+              }
+            }
+            .result {
+              width: 26%; height: 56vh; margin-top: 2.5em;
+              .result_button {
+                #chip {top: 6%;}
+                #result_number {font-size: 2rem;}
+                #result_text {font-size: 1rem;}
+                #result_link {
+                  font-size: .9rem; padding: .5125em .8375em .6625em;
+                }
+              }
+            }
+          }
+          .reset {
+            padding: 0 0 0 1em;
+            label {padding: .5625em .2875em .4625em; font-size: .8rem;}
+          }
+          .custom_close {
+            right: -8%;
+            img {width: 30%;}
+          }
+        }
+        .credit_top10 {
+          padding: .6em;
+          .credit_header {
+            padding: 1em 0 .6em 0;
+            h4 {font-size: 1.2rem;}
+          }
+          .credit_container {
+            .credit_top3 {
+              width: 56%;
+              ul {
+                li {
+                  width: 32%;
+                  p {font-size: 1rem;}
+                  .photo {
+                    margin: .5em .7em;
+                    img {width: 80%; padding: 0;}
+                  }
+                  .box {
+                    h4 {font-size: .6rem;}
+                  }
+                  .tag {font-size: .6rem;}
+                }
+              }
+            }
+            .credit_list {
+              width: 40%;
+              ul {
+                li {
+                  margin-bottom: .1em;
+                  .photo {
+                    margin-right: .6em;
+                    img {width: 90%; margin-top: .2em;}
+                  }
+                  .box {
+                    padding: .1em 0;
+                    h4 {font-size: .8rem;}
+                    p {display: none;}
+                    .tag {padding-top: .4em;}
+                  }
+                }
+              }
+            }
+            .credit_close {
+              right: -8%;
+              img {width: 30%;}
+            }
+          }
+        }
+        .check_top10 {
+          padding: .6em;
+          .check_header {
+            padding: 1em 0 .6em 0;
+            h4 {font-size: 1.2rem;}
+          }
+          .check_container {
+            .check_top3 {
+              width: 56%;
+              ul {
+                li {
+                  width: 32%;
+                  p {font-size: 1rem;}
+                  .photo {
+                    margin: .5em .7em;
+                    img {width: 80%; padding: 0;}
+                  }
+                  .box {
+                    h4 {font-size: .6rem;}
+                  }
+                  .tag {font-size: .6rem;}
+                }
+              }
+            }
+            .check_list {
+              width: 40%;
+              ul {
+                li {
+                  margin-bottom: .1em;
+                  .photo {
+                    margin-right: .6em;
+                    img {width: 90%; margin-top: .2em;}
+                  }
+                  .box {
+                    padding: .1em 0;
+                    h4 {font-size: .8rem;}
+                    p {display: none;}
+                    .tag {padding-top: .4em;}
+                  }
+                }
+              }
+            }
+            .check_close {
+              right: -8%;
+              img {width: 30%;}
+            }
+          }
+        }
+      }
     }
   }
+}
 
-  .inner .container .wrap .swiper .swiper-slide #sub_title {font-size: .5rem;}
-  .inner .container .wrap .swiper .swiper-slide #sub_text1 {font-size: .4rem;}
-  .inner .container .wrap .swiper .swiper-slide #sub_text2 {font-size: .4rem;}
-  .inner .container .wrap .swiper .swiper-slide #sub_link a {font-size: .4rem; padding: .5em 1.3em .4em;}
-  .inner .container .wrap .swiper .swiper-slide img {padding-left: 1.3em; margin-right: .2em;}
-
-  .inner .container .wrap .camera_zoom {display: none;}
-  .inner .container .wrap .camera_bolt {display: none;}
-  .inner .container .wrap .camera_ring {display: none;}
-  .inner .container .wrap .menu_btn {display: none;}
-  .inner .container .wrap .camera_reverse {display: none;}
-  .inner .container .camera_top {display: block;}
-  .inner .container #lens {display: block;}
-  .inner .container .camera_bottom {display: block;}
+@media (orientation: portrait) {
+	.rotate_screen {display: block;}
+  .rotate_text {display: block;}
 }
