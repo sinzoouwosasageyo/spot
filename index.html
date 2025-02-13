@@ -24,7 +24,7 @@
     .intro_logo {margin: 14% 0 2.4% 0;}
     .intro_logo img {width: 15%;}
     .search_area {width: 35%; height: 10%; border: 1px solid #999999aa;
-      border-radius: 25px; margin: 0 auto 1.2%; font-size: 20px; padding: .7% 1%;
+      border-radius: 25px; margin: 0 auto 1.2%; font-size: 1.25rem; padding: .7% 1%;
       line-height: 1.2; box-shadow: 0 3px 3px rgba(235, 235, 235, .5);
       background: #fff;}
     .search_area #typing {float: left;}
@@ -40,6 +40,8 @@
       100% {color: #fff;}
     }
     .search_area img {width: 4%; float: right; }
+    .mobile_text {display: none; margin: 1.5em 0;}
+    .mobile_text span {line-height: 1.2; font-size: 1rem;}
     .intro_keywords {margin-left: -1%; font-family: 'Noto Sans KR';}
     .intro_keywords p {display: inline-block; padding: .5% .6% .64%; transition: all .2s ease-in-out;
       background-color: #44444433; border-radius: 5px; border: 1px solid transparent;}
@@ -48,26 +50,26 @@
     .intro_keywords p a {text-decoration: none; color: #000;}
     .enter {margin: 3% 0 0 -1%;}
     .enter a {text-decoration: none; font-family: 'GmarketSansMedium'; border-radius: 10px;
-      font-weight: bold; font-size: 35px; color: #fff; padding: .7% 2.2% .4%; background-color: #0078ff;
+      font-weight: bold; font-size: 2.1875rem; color: #fff; padding: .7% 2.2% .4%; background-color: #0078ff;
       border: 1px solid transparent; transition: all .2s ease-in-out;}
     .enter a:hover {background-color: #fff; color: #0078ff; border-color: #0078ff;}
 
-    @media (max-width: 1519px){
-      .intro_logo {margin: 20% 0 2.4% 0;}
-      .inner .search_area {width: 45%;}
-    }
-    @media (max-width: 1167px){
-      .intro_logo {margin: 27% 0 2.4% 0;}
-      .inner .search_area {width: 60%; font-size: 18px;}
-    }
+
     @media (max-width: 1024px){
-      .intro_logo {margin: 32% 0 2.4% 0;}
+      .intro_logo {margin: 25% 0 2.4% 0;}
+      .search_area {width: 55%;}
     }
-    @media (max-width: 864px){
-      .intro_logo {margin: 45% 0 2.4% 0;}
-      .inner .search_area {width: 70%; font-size: 16px; margin: 2% auto 2.6%;}
-      .enter {margin: 5% 0 0 -1%;}
+
+    @media (max-width: 768px){
+      .intro_logo {margin: 55% 0 2.4% 0;}
+      .intro_logo img {width: 30%;}
+      .search_area {margin: 1em auto 1em; width: 70%; display: none;}
+      .mobile_text {display: block;}
+      .intro_keywords p {padding: .2em .6em .3em .6em;}
+      .enter {margin: 10% 0 0 -1%;}
+      .enter a {font-size: 1.5rem; padding: .3em .8em .2em .8em;}
     }
+
   </style>
 </head>
 <body>
@@ -79,6 +81,9 @@
       <span id="typing"></span><span id="cursor">_</span>
       <img src="images/search_icon.png" alt="인트로화면 검색 아이콘">
     </div><!--end:.sear_area-->
+    <div class="mobile_text">
+      <span>당신의 소비 패턴에 맞는<br>최적의 카드를 추천해 드립니다.</span>
+    </div><!--end:.mobile_text"-->
     <div class="intro_keywords">
       <p><a href="https://mio-mia.github.io/project02-share/html/re.html" target="_blank">#맞춤형 카드추천</a></p>
       <p><a href="https://mio-mia.github.io/project02-share/html/credit.html" target="_blank">#인기카드 TOP10</a></p>
