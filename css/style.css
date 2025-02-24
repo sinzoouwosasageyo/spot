@@ -295,6 +295,7 @@ a {
 .inner .container .wrap .custom_card {
   width: 30%;
   height: 92.26%;
+  font-family: "Noto Sans KR";
   position: absolute;
   top: 15%;
   left: 7%;
@@ -314,7 +315,7 @@ a {
   color: #0078ff;
 }
 .inner .container .wrap .custom_card #custom_text {
-  font-size: 1.88rem;
+  font-size: 2rem;
   padding-top: 1em;
 }
 .inner .container .wrap .custom_card #custom_link {
@@ -443,6 +444,7 @@ a {
   font-weight: 500;
   display: inline-block;
   width: 8.33vw;
+  text-align: left;
 }
 .inner .container .wrap .custom_menu .custom_container .filter .benefit .benefit_selector input {
   clip: rect(0, 0, 0, 0);
@@ -613,6 +615,7 @@ a {
 .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul {
   display: flex;
   justify-content: space-between;
+  margin-top: 10%;
 }
 .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li {
   width: 32%;
@@ -624,7 +627,7 @@ a {
   color: #111;
 }
 .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 0.5em 0 0 0.75em;
 }
@@ -638,10 +641,17 @@ a {
 }
 .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .box h4 {
   font-size: 1.125rem;
-  font-weight: 500;
+  font-weight: 700;
   text-align: center;
 }
-.inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .tag {
+.inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .box .text {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 10% 0;
+}
+.inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .box .tag {
   margin: 0.625em 0;
   text-align: center;
   color: #666;
@@ -651,6 +661,12 @@ a {
 }
 .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li:hover .tag {
   color: #fff;
+}
+.inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li:first-child .box p {
+  margin-top: 19%;
+}
+.inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li:nth-child(2) .box p {
+  margin-top: 19%;
 }
 .inner .container .wrap .credit_top10 .credit_container .credit_list {
   width: 46%;
@@ -685,6 +701,9 @@ a {
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+}
+.inner .container .wrap .credit_top10 .credit_container .credit_list ul li .box h4 span {
+  font-weight: bolder;
 }
 .inner .container .wrap .credit_top10 .credit_container .credit_list ul li .box p {
   font-size: 0.875rem;
@@ -740,6 +759,7 @@ a {
 .inner .container .wrap .check_top10 .check_container .check_top3 ul {
   display: flex;
   justify-content: space-between;
+  margin-top: 10%;
 }
 .inner .container .wrap .check_top10 .check_container .check_top3 ul li {
   width: 32%;
@@ -751,7 +771,7 @@ a {
   color: #111;
 }
 .inner .container .wrap .check_top10 .check_container .check_top3 ul li p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 0.5em 0 0 0.75em;
 }
@@ -768,7 +788,14 @@ a {
   font-weight: 500;
   text-align: center;
 }
-.inner .container .wrap .check_top10 .check_container .check_top3 ul li .tag {
+.inner .container .wrap .check_top10 .check_container .check_top3 ul li .box .text {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 10% 0;
+}
+.inner .container .wrap .check_top10 .check_container .check_top3 ul li .box .tag {
   margin: 0.625em 0;
   text-align: center;
   color: #666;
@@ -778,6 +805,12 @@ a {
 }
 .inner .container .wrap .check_top10 .check_container .check_top3 ul li:hover .tag {
   color: #fff;
+}
+.inner .container .wrap .check_top10 .check_container .check_top3 ul li:first-child .box p {
+  margin-top: 19%;
+}
+.inner .container .wrap .check_top10 .check_container .check_top3 ul li:nth-child(2) .box p {
+  margin-top: 19%;
 }
 .inner .container .wrap .check_top10 .check_container .check_list {
   width: 46%;
@@ -812,6 +845,9 @@ a {
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+}
+.inner .container .wrap .check_top10 .check_container .check_list ul li .box h4 span {
+  font-weight: bolder;
 }
 .inner .container .wrap .check_top10 .check_container .check_list ul li .box p {
   font-size: 0.875rem;
