@@ -768,7 +768,7 @@ $font_Godo_B: "Godo_B";
       #sub_text1 {font-size: 1.2rem;}
       #sub_text2 {font-size: 1.1rem;}
       #sub_link a {font-size: 1.2rem; padding: .38em 1.4em .5em;}
-      img {width: 38%; padding-left: 2.5em;}
+      img {width: 35%; margin-left: 2.5em;}
     }
   }
   
@@ -812,8 +812,9 @@ $font_Godo_B: "Godo_B";
           li {
             .box {
               h4 {font-size: .8rem;}
-            }
-            .tag {font-size: .8rem;}
+              .text {font-size: .8rem}
+              .tag {font-size: .8rem;}
+            }            
           }
         }
       }
@@ -841,8 +842,9 @@ $font_Godo_B: "Godo_B";
           li {
             .box {
               h4 {font-size: .8rem;}
-            }
-            .tag {font-size: .8rem;}
+              .text {font-size: .8rem}
+              .tag {font-size: .8rem;}
+            }            
           }
         }
       }
@@ -984,7 +986,7 @@ $font_Godo_B: "Godo_B";
           width: 70%; height: 75%; top: 13%; left: 14%;
           .swiper-slide {
             padding: 1% 5%;
-            img {width: 40%;}
+            img {width: 35%; margin-left: 2.2em;}
             #sub_title {font-size: 1.2rem;}
             #sub_text1 {font-size: 1rem;}
             #sub_text2 {font-size: .8rem; font-weight: 500;}
@@ -1039,7 +1041,7 @@ $font_Godo_B: "Godo_B";
                   label {
                     padding: .1125em .1875em .3625em;
                     .benefit_name {
-                      font-size: .8rem; width: 16vw;
+                      font-size: .8rem; width: 16vw; padding-left: 2%;
                       #s_icon {display: none;}
                     }
                   }
@@ -1086,8 +1088,9 @@ $font_Godo_B: "Godo_B";
                   }
                   .box {
                     h4 {font-size: .6rem;}
+                    .text {display: none;}
+                    .tag {font-size: .6rem;}
                   }
-                  .tag {font-size: .6rem;}
                 }
               }
             }
@@ -1134,8 +1137,9 @@ $font_Godo_B: "Godo_B";
                   }
                   .box {
                     h4 {font-size: .6rem;}
-                  }
-                  .tag {font-size: .6rem;}
+                    .text {display: none;}
+                    .tag {font-size: .6rem;}
+                  }                  
                 }
               }
             }

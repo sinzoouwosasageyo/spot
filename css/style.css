@@ -1622,8 +1622,8 @@ a {
     padding: 0.38em 1.4em 0.5em;
   }
   .inner .container .wrap .swiper .swiper-slide img {
-    width: 38%;
-    padding-left: 2.5em;
+    width: 35%;
+    margin-left: 2.5em;
   }
   .inner .container .wrap .custom_card {
     left: 4%;
@@ -1678,7 +1678,10 @@ a {
   .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .box h4 {
     font-size: 0.8rem;
   }
-  .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .tag {
+  .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .box .text {
+    font-size: 0.8rem;
+  }
+  .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .box .tag {
     font-size: 0.8rem;
   }
   .inner .container .wrap .credit_top10 .credit_container .credit_list ul li {
@@ -1706,7 +1709,10 @@ a {
   .inner .container .wrap .check_top10 .check_container .check_top3 ul li .box h4 {
     font-size: 0.8rem;
   }
-  .inner .container .wrap .check_top10 .check_container .check_top3 ul li .tag {
+  .inner .container .wrap .check_top10 .check_container .check_top3 ul li .box .text {
+    font-size: 0.8rem;
+  }
+  .inner .container .wrap .check_top10 .check_container .check_top3 ul li .box .tag {
     font-size: 0.8rem;
   }
   .inner .container .wrap .check_top10 .check_container .check_list ul li {
@@ -2040,7 +2046,8 @@ a {
     padding: 1% 5%;
   }
   .inner .container .wrap .swiper .swiper-slide img {
-    width: 40%;
+    width: 35%;
+    margin-left: 2.2em;
   }
   .inner .container .wrap .swiper .swiper-slide #sub_title {
     font-size: 1.2rem;
@@ -2123,6 +2130,7 @@ a {
   .inner .container .wrap .custom_menu .custom_container .filter .benefit .benefit_selector label .benefit_name {
     font-size: 0.8rem;
     width: 16vw;
+    padding-left: 2%;
   }
   .inner .container .wrap .custom_menu .custom_container .filter .benefit .benefit_selector label .benefit_name #s_icon {
     display: none;
@@ -2186,7 +2194,10 @@ a {
   .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .box h4 {
     font-size: 0.6rem;
   }
-  .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .tag {
+  .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .box .text {
+    display: none;
+  }
+  .inner .container .wrap .credit_top10 .credit_container .credit_top3 ul li .box .tag {
     font-size: 0.6rem;
   }
   .inner .container .wrap .credit_top10 .credit_container .credit_list {
@@ -2248,7 +2259,10 @@ a {
   .inner .container .wrap .check_top10 .check_container .check_top3 ul li .box h4 {
     font-size: 0.6rem;
   }
-  .inner .container .wrap .check_top10 .check_container .check_top3 ul li .tag {
+  .inner .container .wrap .check_top10 .check_container .check_top3 ul li .box .text {
+    display: none;
+  }
+  .inner .container .wrap .check_top10 .check_container .check_top3 ul li .box .tag {
     font-size: 0.6rem;
   }
   .inner .container .wrap .check_top10 .check_container .check_list {
