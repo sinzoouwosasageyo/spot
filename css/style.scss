@@ -656,9 +656,10 @@ $font_Godo_B: "Godo_B";
         }
       }
       .swiper-slide {border-radius: 15px; justify-content: center;
-        background: #F4F1EA; display: flex; align-items: center; padding: 2% 8%;}
+        background: #fff /*#F4F1EA*/; display: flex; align-items: center; padding: 2% 8%;}
       .swiper-slide img {
-        display: block; width: 45%; object-fit: cover; padding-left: 11%;
+        display: block; width: 35%; object-fit: cover; margin-left: 11%;
+        border: 1px solid #666; border-radius: 15px;
       }
       .swiper-slide ul {
         width: 100%; height: 71%; display: flex; flex-direction: column; align-items: center;

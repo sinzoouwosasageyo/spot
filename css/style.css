@@ -1423,17 +1423,19 @@ a {
 .inner .container .wrap .swiper-slide {
   border-radius: 15px;
   justify-content: center;
-  background: #F4F1EA;
+  background: #fff;
   display: flex;
   align-items: center;
   padding: 2% 8%;
 }
 .inner .container .wrap .swiper-slide img {
   display: block;
-  width: 45%;
+  width: 35%;
   -o-object-fit: cover;
      object-fit: cover;
-  padding-left: 11%;
+  margin-left: 11%;
+  border: 1px solid #666;
+  border-radius: 15px;
 }
 .inner .container .wrap .swiper-slide ul {
   width: 100%;
